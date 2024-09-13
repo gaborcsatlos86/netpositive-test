@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Netpositive Teszt - Csatlós Gábor</title>
+        <style>
+		table, th, td {
+		  border: 2px solid black;
+		  border-collapse: collapse;
+		}
+		</style>
+    </head>
+    <body>
+        <h1>Netpositive Teszt - Csatlós Gábor</h1>
+        <table>
+        	<tr>
+			    <th>Number</th>
+			    <th>Source</th>
+			    <th>Message Id</th>
+			    <th>Message</th>
+			</tr>
+		{% for item in list %}
+			<tr>
+				<td class="data-number">{{ item.number }}</td>
+				<td class="data-source-info">{{ item.source }}</td>
+				<td>{% if item.messageId is defined %}{{ item.messageId }}{% endif %}</td>
+				<td>{{ item.message }}</td>
+			</tr>
+		{% endfor %}	  
+        </table>
+    </body>
+</html>
